@@ -1,0 +1,1153 @@
+/* ==========================================
+   THERESA GONDWE - PERSONAL PORTFOLIO
+   ICT251 WEB TECHNOLOGIES - ACTIVITY 3
+========================================== */
+
+
+/* ==========================================
+   1. GLOBAL RESET
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #080b18;
+    color: #ffffff;
+    line-height: 1.7;
+    overflow-wrap: break-word;
+}
+
+
+/* ==========================================
+   2. COLOUR VARIABLES
+========================================== */
+
+:root {
+    --background: #080b18;
+    --section-background: #0c1024;
+    --card-background: #151a35;
+
+    --primary: #00e5ff;
+    --secondary: #a78bfa;
+
+    --text: #ffffff;
+    --muted-text: #b8c3e0;
+
+    --border: rgba(255, 255, 255, 0.15);
+
+    --navbar-background: rgba(8, 11, 24, 0.95);
+
+    --input-background: #10162e;
+}
+
+
+/* ==========================================
+   3. GENERAL ELEMENTS
+========================================== */
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+audio {
+    max-width: 100%;
+}
+
+a {
+    color: var(--primary);
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.3;
+}
+
+h3 {
+    margin-bottom: 15px;
+}
+
+
+/* ==========================================
+   4. NAVIGATION BAR
+========================================== */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    padding: 20px 6%;
+
+    background: var(--navbar-background);
+
+    border-bottom: 1px solid var(--border);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    backdrop-filter: blur(12px);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: var(--text);
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+
+/* ==========================================
+   5. HERO SECTION
+========================================== */
+
+.hero {
+    min-height: 85vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 100px 20px;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(0, 229, 255, 0.12),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(126, 87, 255, 0.15),
+            transparent 35%
+        ),
+        var(--background);
+}
+
+.hero-content {
+    max-width: 850px;
+    position: relative;
+    z-index: 2;
+}
+
+.welcome {
+    color: var(--primary);
+
+    font-size: 14px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 6vw, 65px);
+
+    margin-bottom: 25px;
+}
+
+.name {
+    display: block;
+
+    color: var(--primary);
+
+    text-shadow:
+        0 0 12px rgba(0, 229, 255, 0.35);
+}
+
+.hero h2 {
+    font-size: clamp(20px, 3vw, 30px);
+
+    color: var(--text);
+
+    margin-bottom: 25px;
+}
+
+.bouncing-word {
+    color: var(--secondary);
+}
+
+.intro {
+    max-width: 650px;
+
+    margin: 0 auto 30px;
+
+    color: var(--muted-text);
+
+    font-size: 17px;
+}
+
+
+/* ==========================================
+   6. BUTTONS
+========================================== */
+
+.btn,
+.submit-btn {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #00e5ff,
+        #6366f1
+    );
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.btn:hover,
+.submit-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 25px rgba(0, 229, 255, 0.35);
+}
+
+
+/* ==========================================
+   7. DECORATIVE CIRCLES
+========================================== */
+
+.circle {
+    position: absolute;
+
+    border-radius: 50%;
+
+    opacity: 0.35;
+
+    pointer-events: none;
+}
+
+.circle-one {
+    width: 180px;
+    height: 180px;
+
+    border: 2px solid var(--primary);
+
+    top: 15%;
+    left: 8%;
+}
+
+.circle-two {
+    width: 250px;
+    height: 250px;
+
+    border: 2px solid var(--secondary);
+
+    bottom: 10%;
+    right: 5%;
+}
+
+
+/* ==========================================
+   8. GENERAL SECTIONS
+========================================== */
+
+.section {
+    padding: 90px 8%;
+
+    text-align: center;
+
+    background: var(--section-background);
+}
+
+.section:nth-of-type(even) {
+    background: var(--background);
+}
+
+.section-title {
+    font-size: clamp(28px, 4vw, 38px);
+
+    margin-bottom: 25px;
+
+    color: var(--primary);
+}
+
+.section-text {
+    max-width: 750px;
+
+    margin: 0 auto 35px;
+
+    color: var(--muted-text);
+
+    font-size: 17px;
+}
+
+.subheading {
+    font-size: 23px;
+
+    color: var(--secondary);
+
+    margin: 30px 0 20px;
+}
+
+.external-link {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+.external-link:hover {
+    text-decoration: underline;
+}
+
+
+/* ==========================================
+   9. HOBBIES
+========================================== */
+
+.hobby-list {
+    max-width: 400px;
+
+    margin: 20px auto 35px;
+
+    padding-left: 25px;
+
+    text-align: left;
+
+    color: var(--muted-text);
+}
+
+.hobby-list li {
+    padding: 5px 0;
+}
+
+.hobby-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 25px;
+
+    max-width: 1100px;
+
+    margin: 40px auto 0;
+}
+
+.hobby-card {
+    padding: 35px 25px;
+
+    background: var(--card-background);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.hobby-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--primary);
+}
+
+.hobby-icon {
+    font-size: 45px;
+
+    margin-bottom: 18px;
+}
+
+.hobby-card h3 {
+    font-size: 21px;
+
+    color: var(--text);
+}
+
+.hobby-card p {
+    color: var(--muted-text);
+}
+
+
+/* ==========================================
+   10. LEARNING PLAN
+========================================== */
+
+.learning-steps {
+    max-width: 750px;
+
+    margin: 25px auto 40px;
+
+    padding-left: 30px;
+
+    text-align: left;
+
+    color: var(--muted-text);
+}
+
+.learning-steps li {
+    margin-bottom: 15px;
+
+    padding-left: 10px;
+}
+
+
+/* ==========================================
+   11. LEARNING TABLE
+========================================== */
+
+.table-wrapper {
+    width: 100%;
+
+    max-width: 1000px;
+
+    margin: 30px auto;
+
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background: var(--card-background);
+
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+caption {
+    padding: 15px;
+
+    color: var(--primary);
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+th,
+td {
+    padding: 15px;
+
+    border: 1px solid var(--border);
+
+    text-align: left;
+}
+
+th {
+    background: #13264c;
+
+    color: #ffffff;
+}
+
+td {
+    color: var(--muted-text);
+}
+
+tbody tr:hover {
+    background: rgba(0, 229, 255, 0.08);
+}
+
+
+/* ==========================================
+   12. PROJECTS AND SKILLS
+========================================== */
+
+.projects-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 25px;
+
+    max-width: 1100px;
+
+    margin: 40px auto;
+}
+
+.project-card {
+    background: var(--card-background);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 35px 25px;
+
+    text-align: left;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--primary);
+}
+
+.project-card h3 {
+    color: var(--primary);
+
+    font-size: 21px;
+}
+
+.project-card p {
+    color: var(--muted-text);
+
+    font-size: 15px;
+}
+
+
+/* ==========================================
+   13. PHOTO GALLERY
+========================================== */
+
+.photo-gallery {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 25px;
+
+    max-width: 1100px;
+
+    margin: 40px auto;
+}
+
+.photo-card {
+    background: var(--card-background);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    transition: transform 0.2s ease;
+}
+
+.photo-card:hover {
+    transform: translateY(-5px);
+}
+
+.photo-card img {
+    display: block;
+
+    width: 100%;
+    height: 280px;
+
+    object-fit: cover;
+}
+
+.photo-card figcaption {
+    padding: 18px;
+
+    color: var(--muted-text);
+}
+
+.media-note {
+    color: var(--muted-text);
+
+    font-size: 14px;
+
+    margin-top: 25px;
+}
+
+
+/* ==========================================
+   14. MEDIA SECTION
+========================================== */
+
+.media-card {
+    max-width: 850px;
+
+    margin: 35px auto;
+
+    padding: 30px;
+
+    background: var(--card-background);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+}
+
+.media-card video {
+    display: block;
+
+    width: 100%;
+    max-width: 700px;
+
+    margin: 20px auto;
+
+    border-radius: 12px;
+}
+
+.media-card audio {
+    display: block;
+
+    width: 100%;
+    max-width: 600px;
+
+    margin: 20px auto;
+}
+
+.media-description,
+.media-summary {
+    color: var(--muted-text);
+
+    margin-top: 15px;
+}
+
+.media-summary {
+    text-align: left;
+}
+
+
+/* ==========================================
+   15. CONTACT FORM
+========================================== */
+
+.contact-form {
+    max-width: 650px;
+
+    margin: 30px auto;
+
+    padding: 35px;
+
+    background: var(--card-background);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--text);
+
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    display: block;
+
+    width: 100%;
+
+    padding: 14px;
+
+    background: var(--input-background);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    color: var(--text);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #aeb7d6;
+}
+
+.submit-btn {
+    width: 100%;
+}
+
+.form-note {
+    color: var(--muted-text);
+
+    font-size: 14px;
+
+    margin-top: 20px;
+}
+
+
+/* ==========================================
+   16. JAVASCRIPT FEATURE STYLING
+========================================== */
+
+/* Theme switch */
+
+.theme-btn {
+    padding: 10px 18px;
+
+    border: 1px solid var(--primary);
+
+    border-radius: 25px;
+
+    background: var(--card-background);
+
+    color: var(--text);
+
+    font-weight: bold;
+}
+
+/* Photo gallery viewer */
+
+.gallery-viewer {
+    max-width: 650px;
+
+    margin: 40px auto;
+
+    padding: 25px;
+
+    background: var(--card-background);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+}
+
+.gallery-viewer img {
+    width: 100%;
+
+    max-height: 400px;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+}
+
+.gallery-viewer figcaption {
+    padding: 15px;
+
+    color: var(--muted-text);
+}
+
+.gallery-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+/* Study calculator */
+
+.calculator-container {
+    max-width: 550px;
+
+    margin: 30px auto;
+
+    padding: 30px;
+
+    background: var(--card-background);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    text-align: left;
+}
+
+#study-result {
+    margin-top: 20px;
+
+    color: var(--primary);
+
+    font-weight: bold;
+
+    text-align: center;
+}
+
+/* Contact validation */
+
+.error-message {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #ff9a9a;
+
+    font-size: 14px;
+}
+
+#form-feedback {
+    margin: 20px auto;
+
+    max-width: 650px;
+
+    font-weight: bold;
+}
+
+.message-preview {
+    max-width: 650px;
+
+    margin: 25px auto;
+
+    padding: 25px;
+
+    background: var(--card-background);
+
+    border: 1px solid var(--primary);
+
+    border-radius: 15px;
+
+    text-align: left;
+}
+
+.message-preview h3 {
+    color: var(--primary);
+}
+
+.message-preview p {
+    overflow-wrap: anywhere;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* ==========================================
+   17. LIGHT THEME
+========================================== */
+
+body.light-theme {
+    --background: #f4f7ff;
+    --section-background: #ffffff;
+    --card-background: #e9eefb;
+
+    --primary: #006b87;
+    --secondary: #6243b5;
+
+    --text: #14213d;
+    --muted-text: #354461;
+
+    --border: rgba(20, 33, 61, 0.2);
+
+    --navbar-background: rgba(255, 255, 255, 0.95);
+
+    --input-background: #ffffff;
+
+    background: var(--background);
+    color: var(--text);
+}
+
+
+/* ==========================================
+   18. KEYBOARD ACCESSIBILITY
+========================================== */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid #ffcc00;
+
+    outline-offset: 4px;
+}
+
+
+/* ==========================================
+   19. FOOTER
+========================================== */
+
+footer {
+    padding: 35px 20px;
+
+    text-align: center;
+
+    background: #050710;
+
+    color: #b8c3e0;
+
+    font-size: 14px;
+}
+
+footer a {
+    color: #00e5ff;
+
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==========================================
+   20. TABLET RESPONSIVENESS
+========================================== */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+
+        padding: 20px;
+    }
+
+    .nav-links {
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    .section {
+        padding: 70px 5%;
+    }
+
+    .hero {
+        padding: 80px 20px;
+    }
+
+}
+
+
+/* ==========================================
+   21. MOBILE RESPONSIVENESS
+========================================== */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: 75vh;
+
+        padding: 65px 20px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero h2 {
+        font-size: 21px;
+    }
+
+    .intro {
+        font-size: 15px;
+    }
+
+    .section {
+        padding: 55px 18px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .hobby-container,
+    .projects-container,
+    .photo-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form,
+    .calculator-container {
+        padding: 22px;
+    }
+
+    .media-card {
+        padding: 20px;
+    }
+
+    th,
+    td {
+        padding: 10px;
+
+        font-size: 13px;
+    }
+
+    .circle-one {
+        width: 100px;
+        height: 100px;
+    }
+
+    .circle-two {
+        width: 140px;
+        height: 140px;
+    }
+
+    .btn,
+    .submit-btn {
+        padding: 12px 20px;
+    }
+
+}
+
+
+/* ==========================================
+   22. REDUCED MOTION ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+}
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+body.light-theme .hero {
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(0, 107, 135, 0.08),
+            transparent 35%
+        ),
+        var(--background);
+}
+
+body.light-theme .section {
+    background: var(--section-background);
+}
+
+body.light-theme .section:nth-of-type(even) {
+    background: var(--background);
+}
+
+body.light-theme th {
+    background: #d7e5fa;
+    color: #14213d;
+}
+
+body.light-theme .btn,
+body.light-theme .submit-btn {
+    background: #006b87;
+    color: #ffffff;
+}
+
+body.light-theme .name {
+    text-shadow: none;
+}
+/* Ensure theme button remains readable */
+
+.theme-btn:hover {
+    border-color: var(--secondary);
+    background: var(--section-background);
+}
+
+/* Correct the theme button's active state */
+
+.theme-btn:focus-visible {
+    outline: 3px solid #ffcc00;
+    outline-offset: 4px;
+}
